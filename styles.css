@@ -1,0 +1,143 @@
+/*----------------Grid support for big screens--------------*/
+@supports (grid-area: auto) {
+
+    @media screen and (min-width: 800px) {
+        .grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            grid-template-rows: 1fr 2fr 1fr;
+            grid-template-areas: 
+            "header header header"
+            "article main aside"
+            "footer footer footer";
+            width: 90%;
+            margin: 0 auto;
+        }
+/*------------------Header styles---------------------------*/
+        .header{
+            grid-area: header;
+            background-color: hsl(255, 80%, 80%);
+        }
+
+        .logo{
+            padding: 1%;
+            float: left;
+        }
+
+        .flex{
+            display: flex;
+            position: relative;
+            top: 25px;
+        }
+
+        .flex > li {
+            text-align: center;
+            position: relative;
+            font-size: 1.5em;
+            flex: 1 1 2em;
+            background-color: lightgreen;
+            list-style-type: none;
+            margin: 15px;
+            height: 2em;
+            display: inline-block;
+        }
+
+        a{
+            line-height: 2em;
+            position: relative;
+        }
+/*--------------------first column style-------------------------*/
+        .leftColumn{
+            grid-area: article;
+            text-align: center;
+            background-color: hsl(180, 90%, 50%);
+        }
+/*-------------------middle column style------------------------*/
+        .middleColumn{
+            grid-area: main;
+            text-align: center;
+            background-color: hsl(0, 100%, 30%);
+        }
+/*---------------------last column style-----------------------*/
+        .rightColumn{
+            grid-area: aside;
+            text-align: center;
+            background-color: hsl(169, 100%, 80%);
+        }
+/*--------------------footer style-----------------------------*/
+        .footer{
+            grid-area: footer;
+            text-align: center;
+            background-color:hsl(100, 30%, 80%)
+        }
+    }
+}
+
+/*-------------------Grid support for smaller screens----------------------*/
+     @media screen and (min-width:300px) and (max-width:799px){
+        .grid{
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr 1fr 2fr 1fr 1fr;
+            grid-template-areas: 
+            "header"
+            "article"
+            "main"
+            "aside"
+            "footer";
+        }
+/*------------------Header styles---------------------------*/
+        .header{
+            grid-area: header;
+            background-color: hsl(255, 80%, 80%);
+        }
+
+        .logo{
+            float: right;
+            padding: 1%;
+            width: 100px;
+            height: 100px;
+            
+        }
+
+        .header li{
+            display: inline-block;
+            background-color: lightgreen;
+            list-style-type: none;
+            width: 5em;
+            text-align: center;
+        }
+
+        .flex > li {
+            margin: 2%;
+        }
+    
+        .flex {
+            left: 0;
+        }
+
+/*--------------------first column style-------------------------*/
+         .leftColumn{
+            grid-area: article;
+            text-align: center;
+            background-color: hsl(180, 90%, 50%);
+        }
+/*-------------------middle column style------------------------*/
+        .middleColumn{
+            grid-area: main;
+            text-align: center;
+            background-color: hsl(0, 100%, 30%);
+        }  
+/*---------------------last column style-----------------------*/
+        .rightColumn{
+            grid-area: aside;
+            text-align: center;
+            background-color: hsl(169, 100%, 80%);
+        }
+/*--------------------footer style-----------------------------*/
+        .footer{
+            grid-area: footer;
+            text-align: center;
+            background-color:hsl(100, 30%, 80%)
+        }
+    }
